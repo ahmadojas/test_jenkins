@@ -1,21 +1,18 @@
 pipeline {
-    agent { label 'python3' }
+    agent { label 'python' }
 
     parameters {
-        string name: "INSTANCE_ID",
+        string name: "parameter1",
             description: "The instance ID of the data engine"
 
-        string name: "ACCOUNT_ID",
+        string name: "parameter2",
             description: "The account ID that the instance lives in"
-
-        string name: "AWS_REGION",
-            description: "The region the instance lives in"
     }
 
     stages {
         stage("Enable SL1 Admin") {
             steps {
-                sh "${env.WORKSPACE}/bin/enable-sl1-admin.py '${params.INSTANCE_ID}' '${params.ACCOUNT_ID}' '${params.AWS_REGION}'"
+                sh "${env.WORKSPACE}/bin/enable-sl1-admin.py '${params.parameter1}' '${params.parameter2}'"
             }
         }
     }
