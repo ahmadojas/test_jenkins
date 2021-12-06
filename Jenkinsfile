@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'python' }
+    agent { docker { image 'python:3.5.1' } }
 
     parameters {
         string name: "parameter1",
