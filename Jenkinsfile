@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage("Enable SL1 Admin") {
 		environment {
-                PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37/python'
+                PYTHONPATH='/usr/lib/python3.10:/usr/lib/python3:/usr/var/lib/python3.10:/usr/var/lib/python3'
             }
             steps {
                 sh '''#!/usr/bin/env python
