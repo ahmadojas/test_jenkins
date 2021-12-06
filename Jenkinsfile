@@ -1,5 +1,5 @@
 pipeline {
-    
+    agent any
 
     parameters {
         string name: "parameter1",
