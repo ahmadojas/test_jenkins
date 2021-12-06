@@ -15,7 +15,8 @@ pipeline {
                 PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37/python'
             }
             steps {
-                sh "print("Hello Hi Vanakkam")"
+                sh '''#!/usr/bin/env python
+				print("Hello Hi Vanakkam")'''
             }
         }
     }
