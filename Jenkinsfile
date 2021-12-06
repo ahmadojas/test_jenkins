@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'python' }
+    
 
     parameters {
         string name: "parameter1",
@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage("Enable SL1 Admin") {
             steps {
-                sh "${env.WORKSPACE}/bin/enable-sl1-admin.py '${params.parameter1}' '${params.parameter2}'"
+                sh "python ${env.WORKSPACE}/bin/enable-sl1-admin.py '${params.parameter1}' '${params.parameter2}'"
             }
         }
     }
