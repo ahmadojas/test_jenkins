@@ -11,9 +11,7 @@ pipeline {
 
     stages {
         stage("Enable SL1 Admin") {
-		environment {
-                PYTHONPATH='C:\\Program Files\\Git\\bin\\'
-            }
+
             steps {
                 sh "${env.WORKSPACE}\\bin\\enable-sl1-admin.py}"
             }
