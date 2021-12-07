@@ -15,7 +15,7 @@ pipeline {
                 PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37/'
             }
             steps {
-                sh '/bin/enable-sl1-admin.py'
+                sh '../bin/enable-sl1-admin.py'
             }
         }
     }
