@@ -13,7 +13,9 @@ pipeline {
         stage("Enable SL1 Admin") {
 
             steps {
-                bat 'echo %PATH%'
+                script{
+				bat(script: 'python.exe "${env.WORKSPACE}/bin/enable-sl1-admin.py")
+				}
             }
         }
     }
