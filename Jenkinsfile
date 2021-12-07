@@ -15,8 +15,8 @@ pipeline {
                 PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37'
             }
             steps {
-                sh 'echo %path%'
-				
+				bat 'echo "helooo"'
+				bat 'python ./bin/enable-sl1-admin.py'
             }
         }
     }
