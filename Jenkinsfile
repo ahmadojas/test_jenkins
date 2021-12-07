@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'python' }
+    agent any
 
     parameters {
         string name: "parameter1",
