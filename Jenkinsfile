@@ -13,7 +13,7 @@ pipeline {
         stage("Enable SL1 Admin") {
 
             steps {
-                bat 'echo "Hiiiii"'
+                bat 'echo %PATH%'
             }
         }
     }
