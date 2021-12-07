@@ -14,7 +14,7 @@ pipeline {
 
             steps {
                 script{
-				bat(script: 'python.exe "${env.WORKSPACE}/bin/enable-sl1-admin.py")
+				bat(script: 'python.exe "${env.WORKSPACE}/bin/enable-sl1-admin.py"')
 				}
             }
         }
