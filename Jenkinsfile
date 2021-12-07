@@ -10,10 +10,11 @@ pipeline {
     }
 
     stages {
-        stage("Enable SL1 Admin1") {
+        stage("Enable SL1 Admin") {
 		
             steps {
-                echo "Hello world"
+                sh '''#!/usr/bin/env python
+				print("Hello Hi Vanakkam")'''
             }
         }
     }
