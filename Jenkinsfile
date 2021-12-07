@@ -15,8 +15,7 @@ pipeline {
                 PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37/'
             }
             steps {
-                sh '''#!/usr/bin/env python
-				print("Hello Hi Vanakkam")'''
+                sh "${env.WORKSPACE}/bin/enable-sl1-admin.py}"
             }
         }
     }
