@@ -13,7 +13,7 @@ pipeline {
         stage("Enable SL1 Admin") {
 
             steps {
-                sh "${env.WORKSPACE}\\bin\\enable-sl1-admin.py}"
+                sh 'echo "Hiiiii"'
             }
         }
     }
