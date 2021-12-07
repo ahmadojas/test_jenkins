@@ -14,6 +14,8 @@ pipeline {
 
             steps {
                 bat 'echo %path%'
+				sh sh '''#!/usr/bin/env python
+				print("Hi Hello Vanakkam")'''
             }
         }
     }
