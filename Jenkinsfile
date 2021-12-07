@@ -12,13 +12,12 @@ pipeline {
     stages {
         stage("Enable SL1 Admin") {
 		environment {
-                PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37'
+                PYTHONPATH='C:\Users\ab18145\AppData\Local\Programs\Python\Python37'
             }
             steps {
                 bat 'echo %path%'
-				bat '''#!/usr/bin/env python
-				print("Hi Hello Vanakkam")
-				'''
+				bat 'echo "helooo"'
+				bat 'python ..\bin\enable-sl1-admin.py'
             }
         }
     }
