@@ -16,7 +16,7 @@ pipeline {
             }
             steps {
 				bat 'echo "helooo"'
-				bat 'python ./bin/enable-sl1-admin.py'
+				bat 'python -u ./bin/enable-sl1-admin.py'
             }
         }
     }
