@@ -10,9 +10,11 @@ parameter2 = os.environ['parameter2']
 def main():
     # Parameters :: instanceid,region_name
     instanceid = "i-063de1af7ebc39fb7"
-    time.sleep(60)
+    time.sleep(5)
     print("This is ", parameter1)
+    time.sleep(5)
     print("Wishing you ", parameter2)
+    time.sleep(5)
 ##    ssm_client = boto3.client("ssm", region_name="ap-south-1",)
 ##    responce = ssm_client.send_command(InstanceIds=[
 ##                                       instanceid], DocumentName="AWS-RunShellScript",
