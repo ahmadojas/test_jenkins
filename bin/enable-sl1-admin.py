@@ -2,6 +2,7 @@
 import os
 import json
 import boto3
+import time
 
 parameter1 = os.environ['parameter1']
 parameter2 = os.environ['parameter2']
@@ -9,6 +10,7 @@ parameter2 = os.environ['parameter2']
 def main():
     # Parameters :: instanceid,region_name
     instanceid = "i-063de1af7ebc39fb7"
+    time.sleep(60)
     print("This is ", parameter1)
     print("Wishing you ", parameter2)
 ##    ssm_client = boto3.client("ssm", region_name="ap-south-1",)
