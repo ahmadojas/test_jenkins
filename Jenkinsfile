@@ -2,11 +2,21 @@ pipeline {
     agent any
 
     parameters {
-        string name: "parameter1",
-            description: "The instance ID of the data engine"
-
-        string name: "parameter2",
-            description: "The account ID that the instance lives in"
+        string name: "INSTANCE_ID",
+            description: "The instance ID of the data engine",
+            trim: true
+ 
+        string name: "ACCOUNT_ID",
+            description: "The account ID that the instance lives in",
+            trim: true
+ 
+        string name: "AWS_REGION",
+            description: "The region the instance lives in",
+            trim: true
+ 
+        choice name: "ACTION",
+            description: "Whether to enable or disable the sl1_support account",
+            choices: ["activate", "suspend"]
     }
 
     stages {
