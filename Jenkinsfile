@@ -29,7 +29,7 @@ pipeline {
             agent any
             steps {
                 script {
-                    if ( params.INSTANCE_ID != /(^i-[a-f0-9])+/) {
+                    if ( params.INSTANCE_ID != /(^i-[a-f0-9])+$/) {
                         error("Invalid INSTANCE_ID")
                     }
 
