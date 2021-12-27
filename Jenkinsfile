@@ -27,6 +27,7 @@ pipeline {
             description: "Account would be disabled after the period of selected time note: duration would be in hrs only!",
             choices: ["2 hrs","4 hrs","6 hrs","8 hrs","12 hrs","24 hrs"]
     }
+	stages {
         stage("Enable SL1 Admin") {
 		environment {
                 PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37'
@@ -36,5 +37,5 @@ pipeline {
 				bat 'python -u ./bin/enable-sl1-admin.py'
             }
         }
-    
+    }
 }
