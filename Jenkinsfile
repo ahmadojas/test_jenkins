@@ -23,7 +23,6 @@ pipeline {
             choices: ["1","2","4","8","16"]
     }
 
-    stages {
 	
 		stages {
 			stage("Validate inputs") {
@@ -63,5 +62,4 @@ pipeline {
             }
         }
     }
-}
 }
