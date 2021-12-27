@@ -7,7 +7,7 @@ pipeline {
             defaultValue: "",
             regex: /^(i-[a-zA-Z0-9_-])+$/, 
             failedValidationMessage: "Validation failed!", 
-            description: "Please provide the Alphanumeric instance id with length 18 ex: i-2d9dab0a24fe2c44c")
+            description: "Please provide the Alphanumeric instance id with length  ex: i-2d9dab0a24fe2c44c")
         validatingString(
             name: "AWS_ACCOUNT_ID",
             defaultValue: "",
