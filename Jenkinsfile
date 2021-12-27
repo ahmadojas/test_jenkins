@@ -26,7 +26,7 @@ pipeline {
 	
 		stages {
 			stage("Validate inputs") {
-            agent { label "master" }
+            agent any
             steps {
                 script {
                     if (! params.INSTANCE_ID =~ /i-[a-f0-9]+/) {
