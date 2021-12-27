@@ -5,7 +5,7 @@ import boto3
 import time
 
 INSTANCE_ID = os.environ['INSTANCE_ID']
-ACCOUNT_ID = os.environ['ACCOUNT_ID']
+ACCOUNT_ID = os.environ['AWS_ACCOUNT_ID']
 AWS_REGION = os.environ['AWS_REGION']
 ACTION = os.environ['ACTION']
 DURATION = os.environ['DURATION']
