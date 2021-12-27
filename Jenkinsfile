@@ -5,7 +5,7 @@ pipeline {
         validatingString(
             name: "INSTANCE_ID",
             defaultValue: "",
-            regex: /^(i-[a-zA-Z0-9_-]){19}$/, 
+            regex: /^([a-zA-Z0-9_-]){19}$/, 
             failedValidationMessage: "Validation failed!", 
             description: "Please provide the Alphanumeric instance id with length ex: i-2d9dab0a24fe2c44c")
         validatingString(
