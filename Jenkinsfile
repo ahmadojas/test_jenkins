@@ -27,31 +27,31 @@ pipeline {
 	
 		stages {
 			stage("Validate inputs") {
-				agent { label "master" }
-				steps {
-					script {
-						if (! params.INSTANCE_ID =~ /i-[a-f0-9]+/) {
-							error("Invalid INSTANCE_ID")
-						}
+            agent { label "master" }
+            steps {
+                script {
+                    if (! params.INSTANCE_ID =~ /i-[a-f0-9]+/) {
+                        error("Invalid INSTANCE_ID")
+                    }
 
-						if (! params.AWS_ACCOUNT_ID =~ /^\d+$/) {
-							error("Invalid AWS_ACCOUNT_ID")
-						}
+                    if (! params.AWS_ACCOUNT_ID =~ /^\d+$/) {
+                        error("Invalid AWS_ACCOUNT_ID")
+                    }
 
-						if (! params.AWS_REGION =~ /^\w{2,}-\w+-\d+$/) {
-							error("Invalid AWS_REGION")
-						}
+                    if (! params.AWS_REGION =~ /^\w{2,}-\w+-\d+$/) {
+                        error("Invalid AWS_REGION")
+                    }
 
-						if (! params.ACTION in ["activate", "suspend"]) {
-							error("Invalid ACTION selected")
-						}
+                    if (! params.ACTION in ["activate", "suspend"]) {
+                        error("Invalid ACTION selected")
+                    }
 
-						if (! params.DURATION =~ /\d+/) {
-							error("Invalid DURATION selected")
-						}
-					}
-				}
-			}
+                    if (! params.DURATION =~ /\d+/) {
+                        error("Invalid DURATION selected")
+                    }
+                }
+            }
+        }
 		
         stage("Enable SL1 Admin") {
 		environment {
