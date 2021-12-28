@@ -2,55 +2,35 @@ pipeline {
     agent any
 
     parameters {
-        string name: "INSTANCE_ID",
-            description: "The instance ID of the data engine",
-            trim: true
-
-        string name: "AWS_ACCOUNT_ID",
-            description: "The account ID that the instance lives in",
-            trim: true
-
-        string name: "AWS_REGION",
-            description: "The region the instance lives in",
-            trim: true
-
+        validatingString(
+            name: "INSTANCE_ID",
+            defaultValue: "",
+            regex: /^([a-zA-Z0-9_-]){19}$/, 
+            failedValidationMessage: "Validation failed!", 
+            description: "Please provide the Alphanumeric instance id with length 19 ex: i-2d9dab0a24fe2c44c")
+        validatingString(
+            name: "ACCOUNT_ID",
+            defaultValue: "",
+            regex: /^([0-9_-]){12}$/, 
+            failedValidationMessage: "Validation failed!", 
+            description: "Please provide the Numeric account id with the length 12 ex: 012345678911")
+        validatingString(
+            name: "AWS_REGION",
+            defaultValue: "",
+            regex: /^[a-z\d\-_\s]+$/, 
+            failedValidationMessage: "Validation failed!", 
+            description: "Please provide the Alphanumeric aws region ex: ap-south-1")
         choice name: "ACTION",
-            description: "Whether to enable or disable the sl1_support account",
+            description: "Enable or Disable the sl1_support account",
             choices: ["activate", "suspend"]
-
-        choice name: "DURATION",
-            description: "How long to leave the sl1_admin account enabled",
-            choices: ["1","2","4","8","16"]
+        choice name: "Uptime",
+            description: "Account would be disabled after the period of selected time note: duration would be in hrs only!",
+            choices: ["2 hrs","4 hrs","6 hrs","8 hrs","12 hrs","24 hrs"]
     }
 
 	
 		stages {
-			stage("Validate inputs") {
-            agent any
-            steps {
-                script {
-                    if ( params.INSTANCE_ID != /(^i-[a-f0-9])+$/) {
-                        error("Invalid INSTANCE_ID")
-                    }
-
-                    if (! params.AWS_ACCOUNT_ID =~ /^\d+$/) {
-                        error("Invalid AWS_ACCOUNT_ID")
-                    }
-
-                    if (! params.AWS_REGION =~ /^\w{2,}-\w+-\d+$/) {
-                        error("Invalid AWS_REGION")
-                    }
-
-                    if (! params.ACTION in ["activate", "suspend"]) {
-                        error("Invalid ACTION selected")
-                    }
-
-                    if (! params.DURATION =~ /\d+/) {
-                        error("Invalid DURATION selected ")
-                    }
-                }
-            }
-        }
+			
 		
         stage("Enable SL1 Admin") {
 		environment {
