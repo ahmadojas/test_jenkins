@@ -46,7 +46,7 @@ pipeline {
                     }
 
                     if (! params.DURATION =~ /\d+/) {
-                        error("Invalid DURATION selected")
+                        error("Invalid DURATION selected ")
                     }
                 }
             }
