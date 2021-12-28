@@ -23,7 +23,7 @@ pipeline {
         choice name: "ACTION",
             description: "Enable or Disable the sl1_support account",
             choices: ["activate", "suspend"]
-        choice name: "Uptime",
+        choice name: "DURATION",
             description: "Account would be disabled after the period of selected time note: duration would be in hrs only!",
             choices: ["2 hrs","4 hrs","6 hrs","8 hrs","12 hrs","24 hrs"]
     }
