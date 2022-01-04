@@ -9,6 +9,8 @@ ACCOUNT_ID = os.environ['AWS_ACCOUNT_ID']
 AWS_REGION = os.environ['AWS_REGION']
 ACTION = os.environ['ACTION']
 DURATION = os.environ['DURATION']
+Name = os.getenv
+Name1 = os.environ
 
 def main():
     # Parameters :: instanceid,region_name
@@ -17,6 +19,8 @@ def main():
     print("This is ", INSTANCE_ID)
 ##    time.sleep(5)
     print("Wishing you ", ACCOUNT_ID)
+    print("Wishing you a very ", Name)
+    print("Wishing you a very beutiful ", Name1)
     print(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
 ##    time.sleep(5)
 ##    ssm_client = boto3.client("ssm", region_name="ap-south-1",)
