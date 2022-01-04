@@ -10,7 +10,7 @@ AWS_REGION = os.environ['AWS_REGION']
 ACTION = os.environ['ACTION']
 DURATION = os.environ['DURATION']
 Name = os.getenv
-Name1 = os.environ
+Name1 = os.environ['BUILD_TRIGGER_BY']
 
 def main():
     # Parameters :: instanceid,region_name
