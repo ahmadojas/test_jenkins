@@ -35,9 +35,10 @@ pipeline {
         stage("Enable SL1 Admin") {
 		environment {
                 PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37'
+				BUILD_TRIGGER_BY = "${currentBuild.getBuildCauses()[0].shortDescription} / ${currentBuild.getBuildCauses()[0].userId}"
             }
             steps {
-				BUILD_TRIGGER_BY = "${currentBuild.getBuildCauses()[0].shortDescription} / ${currentBuild.getBuildCauses()[0].userId}"
+				
 				
 				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} and user id is ${env.BUILD_USER_ID} or ${BUILD_TRIGGER_BY}"
 				bat 'echo "helooo"'
