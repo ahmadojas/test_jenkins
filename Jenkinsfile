@@ -37,7 +37,7 @@ pipeline {
                 PYTHONPATH='C:/Users/ab18145/AppData/Local/Programs/Python/Python37'
             }
             steps {
-				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} and user id is ${env.BUILD_USER_ID}"
+				echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} and user id is ${env.BUILD_USER_ID} or ${BUILD_TRIGGER_BY}"
 				bat 'echo "helooo"'
 				bat 'python -u ./bin/enable-sl1-admin.py'
             }
