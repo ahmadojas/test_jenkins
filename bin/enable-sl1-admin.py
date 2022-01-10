@@ -12,7 +12,7 @@ print("hsgshg", sys.argv)
 enabled_file_name = 'sl1_users_enabled.log'
 suspended_file_name = 'sl1_users_suspended.log'
 
-logging.basicConfig(level=logging.DEBUG, filename=enabled_file_name, format='%(asctime)s %(levelname)s: %(message)s')
+logging.basicConfig(level=logging.DEBUG, filename=f"/usr/local/agent-storage/{enabled_file_name}", format='%(asctime)s %(levelname)s: %(message)s')
 logger1 = logging.getLogger()
 # print("handlers", logger1.handlers)
 first = logger1.handlers[0]
@@ -48,13 +48,13 @@ def main(instance, account, region, action, duration):
         data = {"instance_id": instance, "aws_account_id": account, "aws_region": region, "action": action, "duration": duration}
         if action == 'activate':
             data1 = ", ".join(data.values())
-            print(data1)
+            print("activate data1", data1)
             logging.info(data1)
         elif action == 'suspend':
             f = open(enabled_file_name, 'r')
             data['action'] = 'activate'
             data1 = ", ".join(data.values())
-            print("data1", data1)
+            print("suspend data1", data1)
             lines = f.readlines()
             print("lines", lines)
             f.close()
