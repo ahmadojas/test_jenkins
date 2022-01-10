@@ -22,8 +22,12 @@ def main():
     print("Wishing you a very ", Name)
     print("Wishing you a very beutiful ", Name1)
     with open("test_file.txt", "w+") as f:
+        print("Writing into the file")
         f.write("Hey Triggered Man {}".format(Name1))
-        print("File created")
+        # print("File created")
+    #with open("test_file.txt", "w+") as f:
+        print("Reading from file")
+        print("Lines wriiten in the file are : \n", f.read())   
     print(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
 ##    time.sleep(5)
 ##    ssm_client = boto3.client("ssm", region_name="ap-south-1",)
