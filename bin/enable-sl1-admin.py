@@ -21,7 +21,7 @@ def main():
     print("Wishing you ", ACCOUNT_ID)
     print("Wishing you a very ", Name)
     print("Wishing you a very beutiful ", Name1)
-    with opne("test_file.txt", "w+"):
+    with open("test_file.txt", "w+"):
         print("File created")
     print(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
 ##    time.sleep(5)
