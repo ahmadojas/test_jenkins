@@ -25,7 +25,7 @@ def main():
         print("Writing into the file")
         f.write("Hey Triggered Man {}".format(Name1))
         # print("File created")
-    #with open("test_file.txt", "w+") as f:
+    with open("test_file.txt", "w+") as f:
         print("Reading from file")
         print("Lines wriiten in the file are : \n", f.read())   
     print(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
