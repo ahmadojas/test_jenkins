@@ -7,6 +7,7 @@ import logging
 import sys
 import traceback
 
+
 print("hsgshg", sys.argv)
 enabled_file_name = 'sl1_users_enabled.log'
 suspended_file_name = 'sl1_users_suspended.log'
@@ -33,6 +34,15 @@ def main(instance, account, region, action, duration):
 ##        print("Reading from file")
 ##        print("Lines wriiten in the file are : \n", fr.read())   
     print(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    print("dir_path", dir_path)
+    cwd = os.getcwd()
+    print("cwd", cwd)
+    logpath = f"/usr/local/agent-storage/{enabled_file_name}/{account}.log"
+    print("Test log path", logpath)
+
+    print("Checking path", os.path.isfile(logpath))
+    
     try:
         #"hi" + 2
         data = {"instance_id": instance, "aws_account_id": account, "aws_region": region, "action": action, "duration": duration}
