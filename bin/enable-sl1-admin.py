@@ -12,7 +12,7 @@ print("hsgshg", sys.argv)
 enabled_file_name = 'sl1_users_enabled.log'
 suspended_file_name = 'sl1_users_suspended.log'
 
-logging.basicConfig(level=logging.DEBUG, filename=f"/usr/local/agent-storage/{enabled_file_name}", format='%(asctime)s %(levelname)s: %(message)s')
+logging.basicConfig(level=logging.DEBUG, filename=enabled_file_name, format='%(asctime)s %(levelname)s: %(message)s')
 logger1 = logging.getLogger()
 # print("handlers", logger1.handlers)
 first = logger1.handlers[0]
