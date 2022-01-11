@@ -39,13 +39,13 @@ def main(instance, account, region, action, duration):
     cwd = os.getcwd()
     print("cwd", cwd)
 
-    basepath = f"C:\ProgramData\Jenkins\.jenkins\workspace\test_jenkins\test_dir"
+    basepath = f"C:\ProgramData\Jenkins\.jenkins\workspace\\test_jenkins\\test_dir"
     if not os.path.exists(basepath):
         print("Hiiiiiiiiiiiiiiiii")
         os.mkdir(basepath)
         logpath = os.path.join(basepath, "{account}.csv")
         
-    logpath = f"C:\ProgramData\Jenkins\.jenkins\workspace\test_jenkins\test_dir\{account}.csv"
+    logpath = f"C:\ProgramData\Jenkins\.jenkins\workspace\\test_jenkins\\test_dir\\{account}.csv"
     
     # logpath = f"/usr/local/agent-storage/{enabled_file_name}/{account}.log"
     print("Test log path", logpath)
