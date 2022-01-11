@@ -39,17 +39,18 @@ def main(instance, account, region, action, duration):
     cwd = os.getcwd()
     print("cwd", cwd)
 
-##    basepath = f"/var/lib/jenkins/workspace/{JOB_NAME}"
-##    if not os.path.exists(basepath):
-##        os.mkdir(basepath)
-##        logpath = os.path.join(basepath, "{account}.csv")
-##        
-##    logpath = f"/var/lib/jenkins/workspace/{JOB_NAME}/{account}.csv"
-##    
-##    logpath = f"/usr/local/agent-storage/{enabled_file_name}/{account}.log"
-##    print("Test log path", logpath)
-##
-##    print("Checking path", os.path.isfile(logpath))
+    basepath = f"C:\ProgramData\Jenkins\.jenkins\workspace\test_jenkins\test_dir"
+    if not os.path.exists(basepath):
+        print("Hiiiiiiiiiiiiiiiii")
+        os.mkdir(basepath)
+        logpath = os.path.join(basepath, "{account}.csv")
+        
+    logpath = f"C:\ProgramData\Jenkins\.jenkins\workspace\test_jenkins\test_dir\{account}.csv"
+    
+    # logpath = f"/usr/local/agent-storage/{enabled_file_name}/{account}.log"
+    print("Test log path", logpath)
+
+    print("Checking path", os.path.isfile(logpath))
     
     try:
         #"hi" + 2
