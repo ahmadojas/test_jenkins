@@ -1,6 +1,6 @@
 pipeline {
     agent any
-	triggers { cron "*/1 * * * *" }
+	// triggers { cron "*/1 * * * *" }
 	
     parameters {
         validatingString(
@@ -51,7 +51,7 @@ pipeline {
 				steps {		
 					// echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} and user id is ${env.BUILD_USER_ID} or ${BUILD_TRIGGER_BY}"
 					bat 'echo "helooo"'
-					bat "python -u ./bin/enable-sl1-admin.py 'suspend'"
+					bat "python -u ./bin/enable-sl1-admin.py suspend"
 				}
 			}
     }
