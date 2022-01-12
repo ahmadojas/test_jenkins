@@ -105,6 +105,10 @@ def main(instance, account, region, action, duration):
 ##    return output["StandardOutputContent"]
 
 
+def test_cond(param1):
+    print("test_cond function trigger with suspend params ", param1)
+
+
 if __name__ == "__main__":
 ##    instance = sys.argv[1]  # 'i-hgsdh223b' 
 ##    account =  sys.argv[2]  # '12345678'
@@ -117,11 +121,15 @@ if __name__ == "__main__":
 ##        duration = None
 ##
 ##    create_log(instance, account, region, action, duration)
-    INSTANCE_ID = os.environ['INSTANCE_ID']
-    ACCOUNT_ID = os.environ['AWS_ACCOUNT_ID']
-    AWS_REGION = os.environ['AWS_REGION']
-    ACTION = os.environ['ACTION']
-    DURATION = os.environ['DURATION']
-    Name = os.getenv
-    Name1 = os.environ['BUILD_TRIGGER_BY']
-    main(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
+    print(sys.argv)
+    if len(sys.argv) > 2:
+        INSTANCE_ID = os.environ['INSTANCE_ID']
+        ACCOUNT_ID = os.environ['AWS_ACCOUNT_ID']
+        AWS_REGION = os.environ['AWS_REGION']
+        ACTION = os.environ['ACTION']
+        DURATION = os.environ['DURATION']
+        Name = os.getenv
+        Name1 = os.environ['BUILD_TRIGGER_BY']
+        main(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
+    else:
+        test_cond(sys.argv[1])
