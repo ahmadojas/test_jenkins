@@ -39,13 +39,13 @@ def main(instance, account, region, action, duration):
     cwd = os.getcwd()
     print("cwd", cwd)
 
-    basepath = f"C:\ProgramData\Jenkins\.jenkins\workspace\\test_jenkins\\test_dir"
+    basepath = f"C:\ProgramData\Jenkins\.jenkins\workspace\\test_jenkins"
     if not os.path.exists(basepath):
         print("Hiiiiiiiiiiiiiiiii")
         os.mkdir(basepath)
         logpath = os.path.join(basepath, "{account}.csv")
         
-    logpath = f"C:\ProgramData\Jenkins\.jenkins\workspace\\test_jenkins\\test_dir\\{account}.csv"
+    logpath = f"C:\ProgramData\Jenkins\.jenkins\workspace\\test_jenkins\\{account}.csv"
     
     # logpath = f"/usr/local/agent-storage/{enabled_file_name}/{account}.log"
     print("Test log path", logpath)
@@ -123,13 +123,22 @@ if __name__ == "__main__":
 ##    create_log(instance, account, region, action, duration)
     print(sys.argv)
     if len(sys.argv) > 2:
-        INSTANCE_ID = os.environ['INSTANCE_ID']
-        ACCOUNT_ID = os.environ['AWS_ACCOUNT_ID']
-        AWS_REGION = os.environ['AWS_REGION']
-        ACTION = os.environ['ACTION']
-        DURATION = os.environ['DURATION']
-        Name = os.getenv
-        Name1 = os.environ['BUILD_TRIGGER_BY']
-        main(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
+        instance = sys.argv[1]  # 'i-hgsdh223b' 
+        account =  sys.argv[2]  # '12345678'
+        region =   sys.argv[3]  # 'ap-south-2'
+        action =   sys.argv[4]  # 'suspend'
+        # duration = '2'
+        if len(sys.argv) > 5:
+            duration = sys.argv[5]  # sys.argv[5]
+        else:
+            duration = None
+##        INSTANCE_ID = os.environ['INSTANCE_ID']
+##        ACCOUNT_ID = os.environ['AWS_ACCOUNT_ID']
+##        AWS_REGION = os.environ['AWS_REGION']
+##        ACTION = os.environ['ACTION']
+##        DURATION = os.environ['DURATION']
+##        Name = os.getenv
+##        Name1 = os.environ['BUILD_TRIGGER_BY']
+##        main(INSTANCE_ID, ACCOUNT_ID, AWS_REGION, ACTION, DURATION)
     else:
         test_cond(sys.argv[1])
