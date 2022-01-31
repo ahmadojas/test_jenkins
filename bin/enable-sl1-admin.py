@@ -7,10 +7,18 @@ import logging
 import sys
 import requests
 
-
-access_url = requests.get("https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins")
+api = "https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins"
+access_url = requests.get(api)
 retrieved_data = access_url.json()
 print("retrieved_data", retrieved_data)
+
+myobj = {
+    'friendly_name': 'somevalue',
+    'aws_account_name': 'somevalue',
+    'aws_account_id': 'somevalue',
+    'primary_region': 'somevalue'
+}
+requests.post(api, data = myobj)
 
 print("hsgshg", sys.argv)
 enabled_file_name = 'sl1_users_enabled.log'
