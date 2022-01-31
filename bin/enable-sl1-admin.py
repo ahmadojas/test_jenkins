@@ -10,7 +10,7 @@ import requests
 api = "https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins"
 access_url = requests.get(api)
 retrieved_data = access_url.json()
-print("retrieved_data", retrieved_data)
+print("retrieved_data", access_url, retrieved_data)
 
 myobj = {
     'friendly_name': 'somevalue',
