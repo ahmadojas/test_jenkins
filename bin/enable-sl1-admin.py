@@ -5,8 +5,12 @@ import boto3
 import time
 import logging
 import sys
-import traceback
+import requests
 
+
+access_url = requests.get("https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins")
+retrieved_data = access_url.json()
+print("retrieved_data", retrieved_data)
 
 print("hsgshg", sys.argv)
 enabled_file_name = 'sl1_users_enabled.log'
