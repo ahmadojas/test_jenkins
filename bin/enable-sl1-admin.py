@@ -18,7 +18,8 @@ myobj = {
     'aws_account_id': 'somevalue',
     'primary_region': 'somevalue'
 }
-requests.post(api, data = myobj)
+x = requests.post(api, data = myobj)
+print("ddddddddddddddd", x.text)
 
 print("hsgshg", sys.argv)
 enabled_file_name = 'sl1_users_enabled.log'
