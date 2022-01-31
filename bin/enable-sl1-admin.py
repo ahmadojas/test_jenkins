@@ -8,7 +8,7 @@ import sys
 import requests
 
 api = "https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins"
-access_url = requests.get(api)
+access_url = requests.get("https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins")
 retrieved_data = access_url.json()
 print("retrieved_data", access_url, retrieved_data)
 
@@ -18,7 +18,7 @@ myobj = {
     'aws_account_id': 'somevalue',
     'primary_region': 'somevalue'
 }
-x = requests.post(api, data = myobj)
+x = requests.post("https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins", data = myobj)
 print("ddddddddddddddd", x.text)
 
 print("hsgshg", sys.argv)
