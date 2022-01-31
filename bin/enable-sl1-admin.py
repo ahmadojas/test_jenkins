@@ -18,7 +18,7 @@ myobj = {
     'aws_account_id': 'somevalue',
     'primary_region': 'somevalue'
 }
-x = requests.post("https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins", data = json.loads(myobj), headers={'Content-type': 'application/json'})
+x = requests.post("https://m6yuvlc9uk.execute-api.us-east-2.amazonaws.com/dev/access-db-from-jenkins", data = json.dumps(myobj), headers={'Content-type': 'application/json'})
 print("ddddddddddddddd", x.text)
 
 print("hsgshg", sys.argv)
